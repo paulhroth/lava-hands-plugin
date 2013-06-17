@@ -1,3 +1,4 @@
-name: Sample Plugin
+name: lavahands 
 main: com.paulhroth.LavaHandsPlugin
+version: ${version}
 commands:
