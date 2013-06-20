@@ -1,4 +1,8 @@
 name: lavahands 
 main: com.paulhroth.LavaHandsPlugin
 version: ${version}
+author: paulhroth
 commands:
+  LavaHands:
+    description: Turns blocks you touch in lava.
+    aliases: [lavahands, lavaHands, Lavahands]

@@ -6,9 +6,18 @@ import org.bukkit.event.Listener;
 import org.bukkit.event.block.BlockDamageEvent;
 
 public class LavaHandsListener implements Listener {
-	@EventHandler
+	
+    public static LavaHandsPlugin plugin;
+    
+    public LavaHandsListener(LavaHandsPlugin instance) {
+        plugin = instance;
+    }
+    
+    @EventHandler
 	public void onBlockDamage(BlockDamageEvent event) {
 		Block block = event.getBlock();
-		block.setTypeId(10);
+		if (plugin.enabled(event.getPlayer())) {
+            block.setTypeId(10);
+		}
 	}
 }
