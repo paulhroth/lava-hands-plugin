@@ -4,5 +4,5 @@ version: ${version}
 author: paulhroth
 commands:
   LavaHands:
-    description: Turns blocks you touch in lava.
+    description: Turns blocks you touch into lava at the expense of your food level.
     aliases: [lavahands, lavaHands, Lavahands]

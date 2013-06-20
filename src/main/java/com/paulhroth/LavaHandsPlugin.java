@@ -1,6 +1,7 @@
 package com.paulhroth;
 
 import java.util.ArrayList;
+import java.util.logging.Logger;
 
 import org.bukkit.ChatColor;
 import org.bukkit.command.Command;
@@ -13,10 +14,11 @@ import org.bukkit.plugin.java.JavaPlugin;
 public class LavaHandsPlugin extends JavaPlugin { 
   private final LavaHandsListener blockListener= new LavaHandsListener(this); 
   public final ArrayList<Player> LavaHandsUsers = new ArrayList<Player>();
+  private static final Logger logger = Logger.getLogger("Minecraft");
   
   @Override
   public void onEnable() {
-    getLogger().info("[LavaHands] fired up!");
+    logger.info("[LavaHands] enabled.");
     PluginManager pm = getServer().getPluginManager();
     pm.registerEvents(blockListener, this);
 
@@ -26,7 +28,7 @@ public class LavaHandsPlugin extends JavaPlugin {
   
   @Override
   public void onDisable() {
-    getLogger().info("[LavaHands] cooled off.");
+    logger.info("[LavaHands] disabled.");
   }
   
   @Override
@@ -49,6 +51,10 @@ public class LavaHandsPlugin extends JavaPlugin {
   
   public boolean enabled (Player player) {
       return LavaHandsUsers.contains(player);
+  }
+  
+  public Logger getLavaHandsLogger() {
+      return logger;
   }
 
 }
